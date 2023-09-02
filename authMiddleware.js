@@ -17,6 +17,8 @@ async function authenticate(req, res, next) {
       } else {
         res.json({ error: 'Token Or Secret Invalid' });
       }
+    }else{
+      res.json({error:' Token Error'})
     }
   } catch (error) {
     return res.json({ error: 'Authentication failed. Invalid token or secret.' });
