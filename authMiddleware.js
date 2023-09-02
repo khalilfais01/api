@@ -4,7 +4,7 @@ async function authenticate(req, res, next) {
   const { token, secret } = req.headers;
 
   if (!token || !secret) {
-    return res.status(401).json({ error: 'Authentication failed. Missing token or secret.' });
+    return res.json({ error: 'Authentication failed. Missing token or secret.' });
   }
 
   try {
@@ -19,7 +19,7 @@ async function authenticate(req, res, next) {
       }
     }
   } catch (error) {
-    return res.status(403).json({ error: 'Authentication failed. Invalid token or secret.' });
+    return res.json({ error: 'Authentication failed. Invalid token or secret.' });
   }
 }
 
