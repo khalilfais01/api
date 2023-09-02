@@ -7,8 +7,8 @@ router.post('/', (req, res) => {
 });
 
 router.get('/users', authenticate, (req, res) => {
-  const users = []; 
-  res.status(200).json(users);
+  const users = ['']; 
+  res.json(users);
 });
 
 module.exports = router; // Export the router
