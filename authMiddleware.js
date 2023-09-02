@@ -4,7 +4,7 @@ async function authenticate(req, res, next) {
   const { token, secret } = req.headers;
 
   if (!token || !secret) {
-    return res.json({ error: 'Authentication failed. Missing token or secret.' });
+    return res.json({ error: 'Authentication failed.' });
   }
 
   try {
