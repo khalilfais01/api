@@ -43,6 +43,9 @@ connectDB();
 
 // ###################################################################################
 
+app.get('/test', (req, res) => {
+  res.json({message:'Working'})
+})
 
 app.post('/createToken', async (req, res) => {
   const username = req.body.username;
