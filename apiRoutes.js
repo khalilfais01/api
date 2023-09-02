@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
 
 router.get('/users', authenticate, (req, res) => {
   const users = []; 
-  res.json(users);
+  res.status(200).json(users);
 });
 
 module.exports = router; // Export the router
