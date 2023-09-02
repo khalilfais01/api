@@ -4,8 +4,10 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const bodyParser = require("body-parser");
-
+const apiRoutes = require('./apiRoutes');
 const crypto = require('crypto');
+const Api = require('./module/Api.js')
+
 
 const app = express();
 
@@ -13,9 +15,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json()); // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded request bodies
+app.use('/api', apiRoutes);
 
 
-const Api = require('./module/Api.js')
 
 const PORT = process.env.PORT
 const PASSWORD = process.env.PASSWORD
@@ -39,6 +41,10 @@ const connectDB = async () => {
 };
 
 connectDB();
+
+// ###################################################################################
+
+
 
 
 // ###################################################################################
